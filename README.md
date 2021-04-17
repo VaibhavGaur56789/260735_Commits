@@ -1,2 +1,2 @@
 # 260735_Commits
-### This repo is for pythin daily commits.
+### This repo is for python daily commits.
