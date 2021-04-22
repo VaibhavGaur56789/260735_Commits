@@ -1,0 +1,38 @@
+#Program to get next day of a given date.
+
+year = int(input("Enter a Year"))
+
+if year % 400 == 0:
+    leapYear = True
+elif year % 100 == 0:
+    leapYear = False
+elif year % 4 == 0:
+    leapYear = True
+else:
+    leapYear = False
+
+month = int(input("Enter month [1-12]"))
+
+if month in (1,3,5,7,8,10,12):
+    monthLength = 31
+elif month == 2:
+    if leapYear:
+        monthLength = 29
+    else:
+        monthLength = 28
+else:
+    monthLength = 30
+
+day = int(input("Enter day"))
+
+if day < monthLength:
+    day+=1
+else:
+    day = 1
+    if month == 12:
+        month = 1
+        year+=1
+    else:
+        month+=1
+
+print("The next date is [yyyy-mm-dd] %d-%d-%d." % (year, month, day))
